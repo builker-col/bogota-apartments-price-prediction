@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Predicción de Precio de Venta Apartamentos Bogota</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="container mt-4">
+    <h1 class="mb-4">Predicción de Precio de Apartamentos en Chapinero</h1>
+    <form id="predictionForm">
+        <div class="mb-3">
+            <label for="area" class="form-label">Área (m²):</label>
+            <input type="number" class="form-control" id="area" name="area" step="0.01" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="habitaciones" class="form-label">Habitaciones:</label>
+            <input type="number" class="form-control" id="habitaciones" name="habitaciones" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="banos" class="form-label">Baños:</label>
+            <input type="number" class="form-control" id="banos" name="banos" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="parqueaderos" class="form-label">Parqueaderos:</label>
+            <input type="number" class="form-control" id="parqueaderos" name="parqueaderos" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="estrato" class="form-label">Estrato:</label>
+            <input type="number" class="form-control" id="estrato" name="estrato" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="antiguedad" class="form-label">Antigüedad:</label>
+            <select id="antiguedad" class="form-select" name="antiguedad" required>
+                <option value="ENTRE 0 Y 5 ANOS">Entre 0 y 5 años</option>
+                <option value="ENTRE 5 Y 10 ANOS">Entre 5 y 10 años</option>
+                <option value="ENTRE 10 Y 20 ANOS">Entre 10 y 20 años</option>
+                <option value="MAS DE 20 ANOS">Más de 20 años</option>
+                <option value="REMODELADO">Remodelado</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="jacuzzi" class="form-label">Jacuzzi:</label>
+            <select id="jacuzzi" class="form-select" name="jacuzzi" required>
+                <option value="0">No</option>
+                <option value="1">Sí</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="gimnasio" class="form-label">Gimnasio:</label>
+            <select id="gimnasio" class="form-select" name="gimnasio" required>
+                <option value="0">No</option>
+                <option value="1">Sí</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Obtener Predicción</button>
+    </form>
+
+    <h3 class="mt-4" id="predictionResult">Resultado de la Predicción:</h3>
+    <!-- <p id="predictionResult"></p> -->
+
+    <script src="prediction.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
