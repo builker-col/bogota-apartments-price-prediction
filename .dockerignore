@@ -1,3 +1,4 @@
-docs
-notebooks
 .gitignore
+docs/
+notebooks/
+test/
