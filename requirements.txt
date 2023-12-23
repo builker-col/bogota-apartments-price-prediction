@@ -3,3 +3,6 @@ flask
 flask_restful
 flask_cors
 numpy
+sckit-learn
+statsmodels
+dotenv-python
