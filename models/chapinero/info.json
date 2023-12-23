@@ -1,0 +1,82 @@
+{
+    "message": "Hello, World!, this is a GET request to Chapinero price prediction API",
+    "description": "This is a simple API to predict the price of a property in Chapinero, Bogotá, Colombia",
+    "url": ["http://132.226.50.30:5501/chapinero/predict", "https://132.226.50.30:5501/chapinero/<str:model>/predict"],
+    "success": true,
+    "params": {
+        "area": "float",
+        "habitaciones": "int",
+        "banos": "int",
+        "parqueaderos": "int",
+        "estrato": "int",
+        "antiguedad": ["int", "ENTRE 0 Y 5 ANOS", "ENTRE 5 Y 10 ANOS", "ENTRE 10 Y 20 ANOS", "MAS DE 20 ANOS", "REMODELADO"],
+        "latitud": "float (optional)",
+        "longitud": "float (optional)",
+        "estacion_tm_cercana": "str (optional)",
+        "gimnasio": {
+            "type": "int",
+            "min": 0,
+            "max": 1
+        }
+    },
+    "models": {
+        "rf": {
+            "model": "RandomForestRegressor",
+            "version": "0.1.0",
+            "model_path": ["models/chapinero/rf.joblib", "models/chapinero/rf_without_coords.joblib"],
+            "model_params": {
+                "bootstrap": true,
+                "ccp_alpha": 0.0,
+                "criterion": "squared_error",
+                "max_depth": null,
+                "max_features": 1.0,
+                "max_leaf_nodes": null,
+                "max_samples": null,
+                "min_impurity_decrease": 0.0,
+                "min_samples_leaf": 1,
+                "min_samples_split": 2,
+                "min_weight_fraction_leaf": 0.0,
+                "n_estimators": 100,
+                "n_jobs": null,
+                "oob_score": false,
+                "random_state": null,
+                "verbose": 0,
+                "warm_start": false
+            },
+            "score": {
+                "scorer_with_coordinates": 0.90,
+                "scorer_without_coordinates": 0.87
+            }
+        },
+        "ln": {
+            "model": "LinearRegression",
+            "version": "0.1.0",
+            "model_type": "sklearn",
+            "model_path": ["models/chapinero/ln.joblib", "models/chapinero/ln_without_coords.joblib"],
+            "score": {
+                "scorer_with_coordinates": 0.82,
+                "scorer_without_coordinates": 0.81
+            }
+        },
+        "knn": {
+            "model": "KNeighborsRegressor",
+            "version": "0.1.0",
+            "model_type": "sklearn",
+            "model_path": ["models/chapinero/knn.joblib", "models/chapinero/knn_without_coords.joblib"],
+            "model_params": {
+                "algorithm": "auto",
+                "leaf_size": 30,
+                "metric": "manhattan",
+                "metric_params": null,
+                "n_jobs": null,
+                "n_neighbors": 11,
+                "p": 2,
+                "weights": "distance"
+            },
+            "score": {
+                "scorer_with_coordinates": 0.87,
+                "scorer_without_coordinates": 0.86
+            }
+        }
+    }
+}
