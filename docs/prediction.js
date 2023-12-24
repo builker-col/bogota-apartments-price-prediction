@@ -3,7 +3,7 @@ document.getElementById('predictionForm').addEventListener('submit', function (e
 
     const formData = new FormData(this);
 
-    fetch('http://132.226.50.30:5501/chapinero/predict', {
+    fetch('https://bogota-apartments-predict.onrender.com/chapinero/predict', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(formData)),
         headers: {
