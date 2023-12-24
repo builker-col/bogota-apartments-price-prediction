@@ -5,6 +5,6 @@ flask_cors
 numpy
 scikit-learn
 statsmodels
-dotenv-python
+python-dotenv
 flask-sslify
 gunicorn
