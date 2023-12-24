@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_cors import CORS
+from flask_sslify import SSLify
 from joblib import load
 import pandas as pd
 import json
@@ -10,6 +11,8 @@ from src import locations
 
 app = Flask(__name__)
 api = Api(app)
+sslify = SSLify(app)
+
 CORS(app)
             
 class ChapineroRegression(Resource):
