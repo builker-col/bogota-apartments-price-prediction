@@ -7,4 +7,5 @@ scikit-learn
 statsmodels
 python-dotenv
 flask-sslify
+requests
 gunicorn
