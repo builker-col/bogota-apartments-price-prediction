@@ -7,3 +7,4 @@ sckit-learn
 statsmodels
 dotenv-python
 flask-sslify
+gunicorn
